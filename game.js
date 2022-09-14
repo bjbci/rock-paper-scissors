@@ -1,56 +1,63 @@
 //pseudocode
 
-// variable array for r = rock  p = paper s=scissors [r,p,s]
-// variable computerChoice
-// variable for playerChoice
 
-//variable wins
-// var losses
-// var ties
-
-//bigbox
+var array=["r","p","s"]
 
 
-//smallerbox
+var personChoice
+var computerChoice
+var result
+var keepPlaying = true
 
-//text for instructions
+var wins = 0
+var losses = 0
+var ties = 0
 
+while(keepPlaying){
 
-//prompt for r/p/s  prompt brings up popup box
-
-//randomly choose computer choice
-
-//entry box for r/p/s
-
-//compare choices
-
-//if r===r = tie
-//if p===p = tie
-//if s===s = tie
-//if r && s = r wins
-//if r && p= p wins
-//if p && s = s wins
-//if p && r = r wins
-//if s&& p = p wins
-//if s && r = r wins
-
-if(computerChoice[r] && playerChoice[r])
-if(computerChoice[p] && playerChoice[p])
-if(computerChoice[s] && playerChoice[s])
-if(computerChoice[r] && playerChoice[s])
-if(computerChoice[r] && playerChoice[p])
-if(computerChoice[p] && playerChoice[s])
-if(computerChoice[p] && playerChoice[r])
-if(computerChoice[s] && playerChoice[p])
-if(computerChoice[s] && playerChoice[r])
+var personChoice
+var computerChoice
+var result
 
 
-//display results won, loss or tie array [win, lose,tie]
+personChoice=prompt("enter your choice", "r,p or s")
+console.log(personChoice)
 
-//shows result history wins, losses, ties
+computerChoice= array[computerChoice=Math.floor(Math.random()*3)]
+console.log(computerChoice)
+ 
+//computerChoice=Math.floor(Math.random()*3)
+// console.log(computerChoice)
 
-//ask to play again?
 
-//text play again
-//if yes-restart game
-//if no end game
+
+if ( personChoice == computerChoice){
+  console.log("tie")
+  ties++
+  result="tied"
+} else if ((personChoice === "r" && computerChoice === "s" )||
+           (personChoice === "p" && computerChoice === "r") ||
+           (personChoice === "s" && computerChoice === "p")) {
+            console.log("player wins")
+            wins++
+            result="you won"
+           }
+     
+else {
+  console.log("computer wins")
+  losses++
+  result="you lost"
+}
+
+//console.log(result)
+
+alert(result)
+
+	alert("wins: "+ wins + "\n losses: " + losses + "\nties: " + ties, );  
+
+  keepPlaying = confirm("do you want to continue?  ok for yes, or cancel for no")
+}
+
+
+
+
